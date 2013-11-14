@@ -1,0 +1,34 @@
+@Blanco: #fff;
+@Humo: #f0f0f0;
+@Gris: #666;
+@Oscuro: #333;
+
+@open: 'Open Sans', sans-serif;
+@light: 300;
+@regular: 400;
+@bold: 700;
+
+@mobile: "only screen and (max-width: 320px)";
+@mobile_mid: "only screen and (max-width: 640px)";
+@mobile_big: "only screen and (max-width: 1024px)";
+
+.general{
+  color: @Gris;
+  font-family: @open;
+  &p, &a, &li, &span{
+    font-size: 0.8em;
+    font-weight: @regular;
+    line-height:1.5em;
+  }    
+}
+h1, h2, h3{
+  font-weight: @light;
+}
+h4, h5, h6{
+  font-weight: @bold;
+}
+h1{font-size: 2.8em;line-height:2.5em;border-bottom:1px solid @Humo}
+h2{font-size: 2em;line-height:2.2em;}
+h3{font-size: 2em;line-height:2.2em;}
+h4{font-size: 1.5em;line-height:2em;}
+h5{font-size: 1.2em;font-style: italic;line-height:1.8em;}

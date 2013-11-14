@@ -1,0 +1,86 @@
+@import 'generals.lessimport';
+
+body{
+  background: whiteSmoke;
+}
+h1{
+  -webkit-transition: all 250ms;
+     -moz-transition: all 250ms;
+       -o-transition: all 250ms;
+          transition: all 250ms;
+}
+#level_playground{
+  min-height: 400px;
+  max-width: 100%;
+  position: relative;
+}
+#code_submit{
+  background: #CACA7D;
+  border: none;
+  box-shadow: 0 10px 50px rgba(220, 220, 140, 0.5);
+  color: white;
+  display: inline-block;
+  font-weight: 700;
+  height: 150px;
+  margin-top: 10px;
+  vertical-align: top;
+  width: 150px;
+}
+#console{
+  background: #504740;
+  display: inline-block;
+  height: 150px;
+  margin: 10px 0 0 10px;
+  overflow-y: scroll;
+  vertical-align: top;
+  width: -webkit-calc(~'100% - 160px');
+  width:    -moz-calc(~'100% - 160px');
+  width:      -o-calc(~'100% - 160px');
+  width:         calc(~'100% - 160px');
+  tt{
+    color: white;
+    display: block;
+    font-size: 1.15em;
+    font-weight: bold;
+    padding: 4px 2px;
+    &.ok{
+      border-bottom: 1px solid green;
+    }
+    &.err{
+      border-bottom: 1px solid red;
+    }
+  }
+}
+#editor{
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.clock{
+  background: #CACA7D;
+  box-shadow: 0 10px 50px rgba(220, 220, 140, 0.5);
+  padding: 20px;
+  position: fixed;
+  right: 10%;
+  top: 0;
+  z-index: 100;
+  span{
+    color: white;
+    font-weight: 700;
+  }
+}
+.start_game{
+  background: #CACA7D;
+  color: white;
+  display: block;
+  font-size: 2em;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 10px auto;
+  padding: 20px;
+  width: auto;
+}
