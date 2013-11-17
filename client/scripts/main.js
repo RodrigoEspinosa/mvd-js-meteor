@@ -16,17 +16,30 @@ Template.main.events = {
     Session.set('pageIs', 'level');
     Session.set('levelIs', 1);
     $('h1').css('line-height', '32px');
-    window.startClock();
+    clock.start();
   }
 };
 
 Template.level.rendered = function () {
-  window.editor = ace.edit('editor');
-  editor.setTheme('ace/theme/monokai');
-  editor.getSession().setMode('ace/mode/javascript');
-  editor.setFontSize('16px');
-  editor.getSession().setUseWorker(false);
-  editor.resize();
+  if (Session.get('levelIs') == 1) {
+    window.editor = ace.edit('editor');
+    editor.setTheme('ace/theme/monokai');
+    editor.getSession().setMode('ace/mode/javascript');
+    editor.setFontSize('16px');
+    editor.getSession().setUseWorker(false);
+    editor.resize();
+    editor.focus();
+    editor.moveCursorTo(2, 8);
+  } else {
+    Meteor.call('startCode', Session.get('levelIs'), function (err, res) {
+      editor.getSession().setValue(res);
+      editor.focus();
+      switch (Session.get('levelIs')) {
+        case 1: editor.moveCursorTo(2, 8); break;
+        case 2: editor.moveCursorTo(2, 1); break;
+      }
+    });  
+  }
 };
 
 Template.level.number = function () {
@@ -35,19 +48,10 @@ Template.level.number = function () {
 
 Template.level.startCode = function () {
   text = '';
-  switch (Session.get('levelIs')) {
-    case 1:
-      text += 'function doubleInt(i) {\n';
-      text += '\t// i will be an integer. Double it and return it.\n';
-      text += '\treturn i;\n';
-      text += '}';
-    break;
-    case 2:
-      text += 'function isEvenNumber(i) {\n';
-      text += '\ti will be an integer. Return true if it\'s even, and false if it isn\'t.\n';
-      text += '\n}';
-    break;
-  };
+  text += 'function doubleInt(i) {\n';
+  text += '\t// i will be an integer. Double it and return it.\n';
+  text += '\treturn i;\n';
+  text += '}';
   return text;
 };
 

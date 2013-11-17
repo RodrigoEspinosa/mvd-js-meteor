@@ -7,12 +7,18 @@
     resume: function () {
       window.clock.start();
       window.editor.setReadOnly(false);
+      window.editor.focus();
       $('#code_submit').attr('disabled', false);
     },
     
     next: function () {
-      Session.set('levelIs', Session.get('levelIs') + 1);
-      level.resume();
+      if (level.current < 5) {
+        level.current += 1;
+        Session.set('levelIs', level.current);
+        level.resume();  
+      } else {
+        alert('Ganaste!');
+      }
     }
  
   };

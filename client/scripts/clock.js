@@ -1,11 +1,10 @@
 window.clock = {
   inPlay: false,
   secs: 0,
-  startTime: (new Date().getTime()),
+  startTime: new Date().getTime(),
 
   start: function () {
     clock.startTime = new Date().getTime();
-    clock.secs = 0;
     clock.inPlay = true;
     Meteor.setTimeout(clock.tick, 100);
   },
