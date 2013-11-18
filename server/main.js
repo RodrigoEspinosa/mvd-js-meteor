@@ -33,16 +33,16 @@ Meteor.methods({
       break;
       case 2:
         text += 'function isEvenNumber(i) {\n';
-        text += '\t//i will be an integer. Return true if it\'s even, and false if it isn\'t.\n\t';
+        text += '\t// i will be an integer. Return true if it\'s even, and false if it isn\'t.\n\t';
         text += '\n}';
       break;
       case 3:
-        text += 'function isTwo(i) {\n';
-        text += '\t//i will be Batman.\n\t';
+        text += 'function endsWith(a, b) {\n';
+        text += '\t// a will be String. Find out if a ends with b\n\t';
         text += '\n}';
       break;
       case 4:
-        text += 'function isTw o(i) {\n';
+        text += 'function isTwo(i) {\n';
         text += '\t// i will be Batman.\n\t';
         text += '\n}';
       break;

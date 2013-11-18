@@ -3,7 +3,8 @@
 
   window.logr = {
     add: function (text, status) {
-      return $('<tt />').text(text).addClass(status).appendTo($('#console'));
+      $('<tt />').text(text).addClass(status).appendTo($('#console'));
+      $('#console').scrollTop($('#console')[0].scrollHeight)
     }
   };
 

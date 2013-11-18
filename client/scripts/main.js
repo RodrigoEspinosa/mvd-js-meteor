@@ -62,6 +62,9 @@ Template.level.rendered = function () {
       switch (Session.get('levelIs')) {
         case 1: editor.moveCursorTo(2, 8); break;
         case 2: editor.moveCursorTo(2, 1); break;
+        case 3: editor.moveCursorTo(2, 1); break;
+        case 4: editor.moveCursorTo(2, 1); break;
+        case 5: editor.moveCursorTo(2, 1); break;
       }
     });  
   }
