@@ -1,0 +1,45 @@
+#finish{
+  margin: 0 auto;
+  max-width: 60%;
+  min-width: 400px;
+  .finish_form{
+    #player_name, #finish_submit{
+      background: white;
+      border: none;
+      box-sizing: border-box;
+      display: inline-block;
+      vertical-align: top;
+    }
+    #player_name{
+      font-size: 1.4em;
+      height: 55px;
+      line-height: 1.4em;
+      margin: 0;
+      padding: 10px;
+      width: -webkit-calc(~'100% - 80px');
+      width:    -moz-calc(~'100% - 80px');
+      width:      -o-calc(~'100% - 80px');
+      width:         calc(~'100% - 80px');
+    }
+    #finish_submit{
+      height: 55px;
+      margin: 0;
+      padding: 10px;
+      -webkit-transition: all 250ms;
+         -moz-transition: all 250ms;
+          -ms-transition: all 250ms;
+           -o-transition: all 250ms;
+              transition: all 250ms;
+      width: 80px;
+      &.ready, &:hover{
+        background: #504740;
+        color: white;
+        cursor: pointer;
+      }
+    }  
+  }
+  .finish_share{
+    font-size: 0;
+    margin: 16px auto;
+  }
+}

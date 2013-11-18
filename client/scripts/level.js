@@ -17,7 +17,7 @@
         Session.set('levelIs', level.current);
         level.resume();  
       } else {
-        alert('Ganaste!');
+        Session.set('pageIs', 'finish');
       }
     }
  

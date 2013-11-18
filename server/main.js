@@ -1,3 +1,20 @@
+Scores = new Meteor.Collection('scores');
+
+Scores.allow({
+  insert: function (userId, doc) {
+    return check(doc.name, String) && check(doc.time, String);
+  },
+  update: function () {
+    return false;
+  },
+  remove: function () {
+    return false;
+  }
+});
+
+Meteor.publish('scores', function () {
+  return Scores.find();
+});
 
 Meteor.methods({
 
@@ -17,6 +34,21 @@ Meteor.methods({
       case 2:
         text += 'function isEvenNumber(i) {\n';
         text += '\t//i will be an integer. Return true if it\'s even, and false if it isn\'t.\n\t';
+        text += '\n}';
+      break;
+      case 3:
+        text += 'function isTwo(i) {\n';
+        text += '\t//i will be Batman.\n\t';
+        text += '\n}';
+      break;
+      case 4:
+        text += 'function isTw o(i) {\n';
+        text += '\t// i will be Batman.\n\t';
+        text += '\n}';
+      break;
+      case 5:
+        text += 'function isTwo(i) {\n';
+        text += '\t// i will be Batman.\n\t';
         text += '\n}';
       break;
     };
@@ -45,6 +77,17 @@ Meteor.methods({
       status: status,
       output: response
     };
+  },
+
+  postScore: function (name, time) {
+    check(name, String);
+    check(time, String);
+
+    Scores.insert({
+      name: name,
+      time: time,
+      createdAt: new Date()
+    });
   }
 
 });

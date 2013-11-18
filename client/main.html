@@ -11,6 +11,9 @@
   <div id='main' role='main'>
     {{> main}}
   </div>
+  <div id='dock'>
+    {{> dock}}
+  </div>
 </body>
 
 <template name='main'>
@@ -19,5 +22,8 @@
   {{/pageHelper}}
   {{#pageHelper 'level'}}
     {{> level}}
+  {{/pageHelper}}
+  {{#pageHelper 'finish'}}
+    {{> finish}}
   {{/pageHelper}}
 </template>
