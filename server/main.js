@@ -26,28 +26,29 @@ Meteor.methods({
     var text = '';
     switch (level) {
       case 1:
-        text += 'function doubleInt(i) {\n';
+        text += 'function doubleInt (i) {\n';
         text += '\t// i will be an integer. Double it and return it.\n';
         text += '\treturn i;\n';
         text += '}';
       break;
       case 2:
-        text += 'function isEvenNumber(i) {\n';
+        text += 'function isEvenNumber (i) {\n';
         text += '\t// i will be an integer. Return true if it\'s even, and false if it isn\'t.\n\t';
         text += '\n}';
       break;
       case 3:
-        text += 'function endsWith(a, b) {\n';
+        text += 'function endsWith (a, b) {\n';
         text += '\t// a will be String. Find out if a ends with b\n\t';
         text += '\n}';
       break;
       case 4:
-        text += 'function isTwo(i) {\n';
-        text += '\t// i will be Batman.\n\t';
+        text += 'function sumArray (i) {\n';
+        text += '\t// i will be an array. Every element can be a number or another array.\n';
+        text += '\t// if it\'s an array, sum it as well.\n\t';
         text += '\n}';
       break;
       case 5:
-        text += 'function isTwo(i) {\n';
+        text += 'function isTwo (i) {\n';
         text += '\t// i will be Batman.\n\t';
         text += '\n}';
       break;

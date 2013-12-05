@@ -25,9 +25,9 @@ tests = {
   ],
   // LEVEL 4
   4: [
-    {i: 'isTwo(2);', o: true},
-    {i: 'isTwo(4);', o: false},
-    {i: 'isTwo(1);', o: false}
+    {i: 'sumArray([2]);', o: 2},
+    {i: 'sumArray([4, 6, 8, 10]);', o: 28},
+    {i: 'sumArray([6, [4, 10], 20, [10, [30, 10], 10]]);', o: 100}
   ],
   // LEVEL 5
   5: [
