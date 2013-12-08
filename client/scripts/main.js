@@ -1,6 +1,5 @@
-Meteor.subscribe('newScores');
-
 Scores = new Meteor.Collection('scores');
+Meteor.subscribe('scores');
 
 Deps.autorun(function () {
   Meteor.subscribe('pageIs', Session.get('pageIs'));
